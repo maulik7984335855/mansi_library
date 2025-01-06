@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
-import { GoArrowLeft } from "react-icons/go";
-import { GoArrowRight } from "react-icons/go";
+// import { GoArrowLeft } from "react-icons/go";
+// import { GoArrowRight } from "react-icons/go";
 import img from "../assets/silder_img.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Slider = () => {
-  useEffect(() => {
-    let index = 0;
-    let slides = document.querySelector("slides");
-    let totalSildes = document.querySelectorAll("slide").length;
-  });
+  const notify = () => toast('Demo Book !');
+  
 
   return (
     <>
@@ -44,7 +43,7 @@ const Slider = () => {
                 <span className="font-normal text-[10px]">
                   This is book 1
                 </span>
-                <button className="mt-4 p-2 text-[15px] rounded-xl border border-pink-400">
+                <button onClick={notify} className="mt-4 p-2 text-[15px] rounded-xl border border-pink-400">
                   View Book Demo
                 </button>
               </div>
@@ -61,7 +60,7 @@ const Slider = () => {
                 <span className="font-normal text-[10px]">
                   This is book 2
                 </span>
-                <button className="mt-4 p-2 text-[15px] rounded-xl border border-blue-400">
+                <button onClick={notify} className="mt-4 p-2 text-[15px] rounded-xl border border-blue-400">
                   View Book Demo
                 </button>
               </div>
@@ -78,7 +77,7 @@ const Slider = () => {
                 <span className="font-normal text-[10px]">
                   This is book 3
                 </span>
-                <button className="mt-4 p-2 text-[15px] rounded-xl border border-green-400">
+                <button onClick={notify} className="mt-4 p-2 text-[15px] rounded-xl border border-green-400">
                   View Book Demo
                 </button>
               </div>
@@ -87,6 +86,7 @@ const Slider = () => {
           </div>
         </div>
       </div>
+      {/* <ToastContainer /> */}
     </>
   );
 };

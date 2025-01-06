@@ -1,10 +1,11 @@
 import React from 'react'
 import img from '../assets/left_pic_home.png'
 import Slider from './Slider';
-import Slider2 from './Slider2';
-import Footer from './Footer';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Home = () => {
+  const notify = () => toast('Wow so easy !');
   return (
     <>
       <div className='bg-slate-200  mb-10 rounded-b-3xl'>
@@ -15,8 +16,8 @@ const Home = () => {
         <div className=' text-center lg:w-[40%]'>
           <p>Reading books is a wonderful way to spend your time.Here at we believe reading will help you make connections with others.</p>
         </div>
-        <div className='flex gap-4 pb-40 cursor-pointer'>
-          <button className='bg-white cursor-pointer text-black w-[140px] px-2 py-3 rounded-lg hover:shadow-2xl'>Download Now</button>
+        <div className='flex gap-4 pb-40 '>
+          <button onClick={notify}  className='bg-white cursor-pointer text-black w-[140px] px-2 py-3 rounded-lg hover:shadow-2xl '>Download Now</button>
           <button className='bg-transparent border flex-1 cursor-pointer border-white w-[140px] px-2 py-3 rounded-lg hover:shadow-2xl '>Read Free Book</button>
         </div>
         
