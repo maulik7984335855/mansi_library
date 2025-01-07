@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import img from "../assets/logo_maulik.jpg";
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +73,9 @@ const Navbar = () => {
         {/* Navbar Center for Larger Screens */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal flex gap-1 px-1 font-bold text-[16px]">
-            <li>
+            <li 
+           
+            >
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -90,10 +93,15 @@ const Navbar = () => {
         {/* Navbar End */}
         <div className="navbar-end">
           <Link to="/cart">
-            <button className="flex items-center gap-2 bg-white text-blue-500 px-2 py-1 rounded-xl hover:drop-shadow-2xl transition-shadow duration-300">
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              className="flex items-center gap-2 bg-white text-blue-500 px-2 py-1 rounded-xl hover:drop-shadow-2xl transition-shadow duration-300"
+            >
               <CiShoppingCart className="text-3xl font-bold" />
-              <span className="text-sm font-bold">Add To Cart</span>
-            </button>
+
+              <span className="text-sm font-bold">Cart</span>
+            </motion.button>
           </Link>
         </div>
       </div>

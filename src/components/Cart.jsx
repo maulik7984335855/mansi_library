@@ -1,11 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, clearCart } from "../redux/cartSlice";
+import { removeFromCart, clearCart,incQty } from "../redux/cartSlice";
+import { selectedCartItemPrice } from "../redux/cartSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.items);
-  // console.log(cart);
+  const totalPrice = useSelector(selectedCartItemPrice)
+  // console.log(totalPrice);
+  // console.log(selectedCartItemPrice);
+  
 
   const handleRemove = (id) => {
     dispatch(removeFromCart({ id }));
@@ -54,26 +58,30 @@ const Cart = () => {
                     >
                       Remove
                     </button>
-                    {/* <span className="flex gap-2 items-center">
-                      <button className="p-[4px] rounded-full text-white text-lg font-bold bg-blue-500">+</button>
+                    <span className="flex gap-2 pt-4 items-center">
+                      <button onClick={dispatch(incQty(item.id))} className="p-[4px] rounded-full text-white text-lg font-bold bg-blue-500">+</button>
                       <span>{item.quantity}</span>
-                      <button className="p-[4px] rounded-full text-white text-lg font-bold bg-blue-500">-</button>
-                    </span> */}
+                      <button className="p-[4px]  rounded-full text-white text-lg font-bold bg-blue-500">-</button>
+                    </span>
                   </div>
                 </div>
               </div>
+              
             </>
           ))
         )}
       </div>
       <div className="flex items-center justify-center">
         {cart.length !== 0 && (
+          <div className="flex flex-col pt-3">
+          <h2 className="text-xl font-bold">Total Price: {totalPrice}</h2>
           <button
             onClick={handleClearCart}
             className="mt-4  p-2 text-[15px] rounded-xl border border-red-400"
           >
             Clear Cart
           </button>
+          </div>
         )}
       </div>
     </div>
