@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/left_pic_home.png";
+import img from "../../public/assets/left_pic_home.png";
 import Slider from "./Slider";
 import { useNavigate } from "react-router-dom";
 // import 'react-toastify/dist/ReactToastify.css';

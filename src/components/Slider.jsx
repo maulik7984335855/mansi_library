@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 // import { GoArrowLeft } from "react-icons/go";
 // import { GoArrowRight } from "react-icons/go";
-import img from "../assets/silder_img.png";
+import img from "/assets/silder_img.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

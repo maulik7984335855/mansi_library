@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img from "../assets/logo_maulik.jpg";
+import img from "/assets/logo_maulik.jpg";
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";

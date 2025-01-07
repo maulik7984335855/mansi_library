@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { books } from "../assets/books.js";
+import { books } from "./books.js";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice.js";
 import { motion } from "motion/react";

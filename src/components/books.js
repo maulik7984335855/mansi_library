@@ -2,7 +2,7 @@ export const books = [
     {
         id:1,
         name:"Python Book",
-        img_url:"../../src/assets/python.jpg",
+        img_url:"assets/python.jpg",
         description:"This is Python Book",
         price:2000,
         category:"python",
@@ -11,7 +11,7 @@ export const books = [
     {
         id:2,
         name:"Java Book",
-        img_url:"../../src/assets/Java_Programming_Cover.jpg",
+        img_url:"assets/Java_Programming_Cover.jpg",
         description:"This is Java Book",
         price:1200,
         category:"java",
@@ -20,7 +20,7 @@ export const books = [
     {
         id:3,
         name:"Sport Book",
-        img_url:"../../src/assets/sport.jpg",
+        img_url:"assets/sport.jpg",
         description:"This is Sport Book",
         price:1000,
         category:"sport",
@@ -30,7 +30,7 @@ export const books = [
     {
         id:4,
         name:"Motivation Book",
-        img_url:"../../src/assets/motivation.png",
+        img_url:"assets/motivation.png",
         description:"This is Motivation Book",
         price:1100,
         category:"motivation",
@@ -39,7 +39,7 @@ export const books = [
     {
         id:5,
         name:"Cartoon Book",
-        img_url:"../../src/assets/cartoon.jpg",
+        img_url:"assets/cartoon.jpg",
         description:"This is Cartoon Book",
         price:2100,
         category:"cartoon",
@@ -48,7 +48,7 @@ export const books = [
     {
         id:6,
         name:"Dreams Book",
-        img_url:"../../src/assets/dream.jpg",
+        img_url:"assets/dream.jpg",
         description:"This is Dreams Book",
         price:2100,
         category:"dreams",
@@ -57,7 +57,7 @@ export const books = [
     {
         id:7,
         name:"Health Book",
-        img_url:"../../src/assets/health.jpg",
+        img_url:"assets/health.jpg",
         description:"This is Health Book",
         price:2100,
         category:"health",
