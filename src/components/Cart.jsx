@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, clearCart,incQty } from "../redux/cartSlice";
+import { removeFromCart, clearCart } from "../redux/cartSlice";
 import { selectedCartItemPrice } from "../redux/cartSlice";
 
 const Cart = () => {
@@ -59,7 +59,7 @@ const Cart = () => {
                       Remove
                     </button>
                     <span className="flex gap-2 pt-4 items-center">
-                      <button onClick={dispatch(incQty(item.id))} className="p-[4px] rounded-full text-white text-lg font-bold bg-blue-500">+</button>
+                      <button  className="p-[4px] rounded-full text-white text-lg font-bold bg-blue-500">+</button>
                       <span>{item.quantity}</span>
                       <button className="p-[4px]  rounded-full text-white text-lg font-bold bg-blue-500">-</button>
                     </span>
