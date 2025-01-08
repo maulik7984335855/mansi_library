@@ -7,13 +7,14 @@ import Store from "./components/Store";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 // import { Bounce, ToastContainer } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
-        
         <Navbar />
+        <Toaster />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

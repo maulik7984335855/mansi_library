@@ -20,7 +20,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="pt-20 h-screen">
+    <div className="pt-20 lg:h-screen min-h-screen pb-5">
       <h2 className="text-center text-2xl pb-6">Cart Items:</h2>
       <div className=" flex items-center gap-3 lg:flex-row flex-col justify-center">
         {cart.length === 0 ? (
@@ -58,11 +58,11 @@ const Cart = () => {
                     >
                       Remove
                     </button>
-                    <span className="flex gap-2 pt-4 items-center">
+                    {/* <span className="flex gap-2 pt-4 items-center">
                       <button  className="p-[4px] rounded-full text-white text-lg font-bold bg-blue-500">+</button>
                       <span>{item.quantity}</span>
                       <button className="p-[4px]  rounded-full text-white text-lg font-bold bg-blue-500">-</button>
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>
