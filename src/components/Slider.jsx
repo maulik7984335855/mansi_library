@@ -34,7 +34,7 @@ const Slider = () => {
           <motion.div
            initial={{ y: -900,opacity:0 }}
            animate={{ y: 0, opacity: 1 }}
-           transition={{duration:3,ease:"easeInOut"}}
+           transition={{duration:5,ease:"easeInOut"}}
            className="slides flex lg:flex-row flex-col overflow-hidden justify-center gap-8 items-center  w-[700px]">
             <div className="slide bg-pink-300 lg:w-[30%] w-[70%] rounded-xl flex items-center flex-col pt-3 ">
               <div className="bg-pink-400 w-fit p-2 rounded-full">
