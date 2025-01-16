@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import img from "/assets/silder_img.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { motion } from "motion/react";
 
 const Slider = () => {
   const notify = () => toast('Demo Book !');
@@ -30,12 +31,16 @@ const Slider = () => {
           </div> */}
         </div>
         <div className="slider w-full flex justify-center mt-[30px] pb-4">
-          <div className="slides flex lg:flex-row flex-col overflow-hidden justify-center gap-8 items-center  w-[700px]">
+          <motion.div
+           initial={{ y: -900,opacity:0 }}
+           animate={{ y: 0, opacity: 1 }}
+           transition={{duration:3,ease:"easeInOut"}}
+           className="slides flex lg:flex-row flex-col overflow-hidden justify-center gap-8 items-center  w-[700px]">
             <div className="slide bg-pink-300 lg:w-[30%] w-[70%] rounded-xl flex items-center flex-col pt-3 ">
               <div className="bg-pink-400 w-fit p-2 rounded-full">
                 <img src={img} alt="image" className="w-20" />
               </div>
-              <div className="bg-white m-1 mt-5 rounded-xl p-4">
+              <div className="bg-white flex flex-col m-1 mt-5 rounded-xl p-4">
                 <div className="flex justify-between">
                   <h2 className="font-medium text-[18px]">Book 1</h2>
                   <span className="text-pink-500">$ 34.00</span>
@@ -48,11 +53,13 @@ const Slider = () => {
                 </button>
               </div>
             </div>
-            <div className="slide bg-blue-300 lg:w-[30%] w-[70%] rounded-xl flex items-center flex-col pt-3 ">
+            <div 
+           
+             className="slide bg-blue-300 lg:w-[30%] w-[70%] rounded-xl flex items-center flex-col pt-3 ">
               <div className="bg-blue-400 w-fit p-2 rounded-full">
                 <img src={img} alt="image" className="w-20" />
               </div>
-              <div className="bg-white m-1 mt-5 rounded-xl p-4">
+              <div className="bg-white m-1 flex flex-col mt-5 rounded-xl p-4">
                 <div className="flex justify-between">
                   <h2 className="font-medium text-[18px]">Book 2</h2>
                   <span className="text-blue-500">$ 34.00</span>
@@ -69,7 +76,7 @@ const Slider = () => {
               <div className="bg-green-400 w-fit p-2 rounded-full">
                 <img src={img} alt="image" className="w-20" />
               </div>
-              <div className="bg-white m-1 mt-5 rounded-xl p-4">
+              <div className="bg-white m-1 flex flex-col mt-5 rounded-xl p-4">
                 <div className="flex justify-between">
                   <h2 className="font-medium text-[18px]">Book 3</h2>
                   <span className="text-green-500">$ 34.00</span>
@@ -83,7 +90,7 @@ const Slider = () => {
               </div>
             </div>
            
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* <ToastContainer /> */}

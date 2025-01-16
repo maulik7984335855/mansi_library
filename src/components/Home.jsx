@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-slate-200  mb-10 rounded-b-3xl">
+      <div  className="bg-slate-200  mb-10 rounded-b-3xl">
         <div className="container  max-w-screen-2xl  flex flex-col items-center justify-center mx-auto gap-10 text-white  pt-5 bg-blue-500 rounded-b-3xl lg:h-screen  ">
           <div>
             <h1 className="lg:text-[8rem] pt-16 text-[5rem] text-center tracking-tighter leading-none">

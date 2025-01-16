@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { books } from "./books.js";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice.js";
-import { motion } from "motion/react";
+import { delay, motion } from "motion/react";
 
 const Store = () => {
   // console.log(books);
   const dispatch = useDispatch();
-
+  const cart = useSelector((cart)=>cart.items)
   const [filteredCategory, setFilteredCategory] = useState("All");
   const [search, setSearch] = useState("");
+  const [addCart,setAddCart] = useState("Add To Cart")
+
+  // console.log("cart: ",cart[0].id);
+  
 
   const filteredBooks = books.filter((book) => {
     const matchesCategory =
@@ -19,9 +23,18 @@ const Store = () => {
       .includes(search.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-
+  
   const handleAddToCart = (book) => {
     dispatch(addToCart(book));
+    // book.map((itemBook)=>(
+    //   cart.map((itemCart)=>(
+    //     // itemCart?.id == itemBook?.id ? setAddCart("Added To Cart") : setAddCart("Add To Cart")
+
+    //   ))
+    // ))
+    // console.log(book.id == cart.id);
+    // cart.map((item)=>item.id == book.id) ? setAddCart("Added To Cart") : setAddCart("Add To Cart")
+    
   };
 
   return (
@@ -107,7 +120,17 @@ const Store = () => {
           <div className="flex flex-wrap mt-4 items-center gap-3 justify-center">
             {filteredBooks.length > 0 ? (
               filteredBooks.map((book) => (
-                <div key={book?.id}>
+                
+                <motion.div
+                  initial={{x:-100,opacity:0}}
+                  animate={{ x: 0, opacity: 1 }}
+                  // transition={{
+                  //   x: { duration: 2 },
+                  //   opacity: { duration: 1, delay: 0.5 },
+                  // }}
+                  transition={{duration:2,ease:"easeInOut"}}
+                  key={book?.id}
+                >
                   <div className="slide bg-blue-300 lg:w-auto w-[270px] rounded-xl flex items-center flex-col pt-3 ">
                     <div className="w-fit p-2 rounded-full">
                       <img
@@ -130,11 +153,15 @@ const Store = () => {
                         onClick={() => handleAddToCart(book)}
                         className="mt-4 p-2 text-[15px] rounded-xl border border-blue-400"
                       >
-                        Add To Cart
+                      {/* {addCart} */}
+                      Add To Cart
+                      {/* {cart.map((item)=>item.id == book.id) ? "Add To Cart" : "Added To Cart"} */}
+                     
+                        
                       </button>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))
             ) : (
               <p className="text-gray-500">No books found.</p>

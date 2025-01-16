@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import img from "/assets/logo_maulik.jpg";
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+import { easeInOut, motion } from "motion/react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +12,18 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-transparent backdrop-blur-xl fixed top-0 left-0 right-0 text-neutral px-3 z-50">
+    <motion.div
+      initial={{ transform: "translatey(-100px)" }}
+      animate={{ transform: "translatey(0px)" }}
+      transition={{
+        // type:"spring",
+        duration:2,
+        delay:1,
+        ease:"easeInOut"
+      }}
+      
+      className="bg-transparent backdrop-blur-xl fixed top-0 left-0 right-0 text-neutral px-3 z-50"
+    >
       <div className="navbar">
         {/* Navbar Start */}
         <div className="navbar-start">
@@ -73,9 +84,7 @@ const Navbar = () => {
         {/* Navbar Center for Larger Screens */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal flex gap-1 px-1 font-bold text-[16px]">
-            <li 
-           
-            >
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -105,7 +114,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
